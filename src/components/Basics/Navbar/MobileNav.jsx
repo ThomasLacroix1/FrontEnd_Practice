@@ -18,14 +18,14 @@ export default function MobileNav() {
         <>
             <nav className="bg-background h-14 fixed w-full flex flex-row justify-between py-5 px-6 items-center z-50">
                 <div
-                    className="relative size-6 cursor-pointer flex flex-col items-center"
+                    className="relative size-5 cursor-pointer flex flex-col items-center"
                     onClick={toggleMenu}>
                     <div
                         className={`absolute w-full h-0.5 bg-foreground rounded-lg transition-transform duration-500 ${isOpen ? 'rotate-45 top-1/2' : 'top-1'
                             }`}
                     ></div>
                     <div
-                        className={`absolute h-0.5 bg-foreground rounded-lg transition-all duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'
+                        className={`absolute h-0.5 bg-foreground rounded-lg transition-all duration-100 ${isOpen ? 'opacity-0' : 'opacity-100'
                             }`}
                         style={{
                             width: '70%',
@@ -66,14 +66,13 @@ export default function MobileNav() {
                             <div className='bg-green-400 h-10 w-20 rounded-md'></div>
                         </div>
                     </li>
-                    <li className='border-t-[1px] border-secondary w-full flex flex-col items-center gap-6 py-6 px-4'>
+                    <li className='border-t-[1px] border-secondary w-full flex flex-col gap-6 py-6 px-4'>
                         <h2 className="uppercase text-sm text-primary w-full text-left">Podcasts</h2>
                         <ul className='w-full flex flex-col gap-6 text-sm text-foreground text-left'>
-                            <p>Explorer les podcasts</p>
-                            <li></li>
+                            <li><p>Explorer les podcasts</p></li>
                         </ul>
                     </li>
-                    <li className='border-t-[1px] border-secondary w-full flex flex-col items-center gap-6 py-6 px-4'>
+                    <li className='border-t-[1px] border-secondary w-full flex flex-col gap-6 py-6 px-4'>
                         <h2 className="uppercase text-sm text-primary w-full text-left">Catégories</h2>
                         <ul className='w-full flex flex-col gap-6 text-sm text-foreground text-left'>
                             <li><p>Sciences et Savoirs</p></li>
@@ -94,7 +93,7 @@ export default function MobileNav() {
                             <li><p>Fictions</p></li>
                         </ul>
                     </li>
-                    <li className='border-t-[1px] border-secondary w-full flex flex-row items-center gap-2 py-6 px-4'>
+                    <li className='border-t-[1px] border-secondary w-full flex flex-row gap-2 py-6 px-4'>
                         <div className='rounded-4xl border-2 border-foreground'>
                             <button
                                 className={`border-0 w-26 rounded-4xl transition-all duration-500 ${isDarkMode ? 'bg-transparent text-foreground' : 'bg-foreground text-background'}`}
