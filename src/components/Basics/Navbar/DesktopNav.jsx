@@ -2,7 +2,7 @@ import Logo from "@/components/Basics/Logo";
 
 export default function DesktopNav() {
     return (
-        <nav className="bg-gray-500 flex flex-row justify-between items-center h-16 text-white">
+        <nav className="bg-black/20 flex flex-row justify-between items-center h-16 text-white">
             <div className="flex flex-row gap-2">
                 <a href="#" className="text-white">Radios</a>
                 <a href="#" className="text-white">Podcasts</a>
