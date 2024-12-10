@@ -22,9 +22,33 @@ export default function DesktopNav() {
         <>
             <nav className={` ${showCategoriesMenu ? 'bg-background' : 'bg-transparent'} fixed flex flex-row justify-between px-8 items-center h-20 w-full text-primary z-20 transition-all ease-in-out duration-500 delay-200`}>
                 <div className="flex flex-row gap-8">
-                    <a href="#" onClick={handleRadiosMenu}>Radios</a>
+                    <a href="#" onClick={handleRadiosMenu} className="flex items-center gap-2">
+                        Radios
+                        <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${showRadiosMenu ? 'rotate-180' : 'rotate-0'
+                                }`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
                     <a href="#">Podcasts</a>
-                    <a href="#" onClick={handleCategoriesMenu}>Catégories</a>
+                    <a href="#" onClick={handleCategoriesMenu} className="flex items-center gap-2">
+                        Catégories
+                        <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${showCategoriesMenu ? 'rotate-180' : 'rotate-0'
+                                }`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
                     <a href="#">Musique</a>
                     <a href="#">Enfants</a>
                 </div>
@@ -57,7 +81,7 @@ export default function DesktopNav() {
                 </div>
             </nav>
 
-            <div className={`bg-[#373737]/40 w-full ${showRadiosMenu ? 'h-fit' : 'h-0'} overflow-y-hidden overflow-x-auto absolute top-20 z-10 transition-all duration-500 ease-in-out`}>
+            <div className={`bg-[#373737]/40 w-full h-fit ${showRadiosMenu ? 'scale-y-100' : 'scale-y-0'} overflow-y-hidden overflow-x-auto absolute top-20 z-10 transition-all duration-300 ease-in-out`} style={{ transformOrigin: 'top' }}>
                 <div className="flex flex-row gap-6 items-center justify-center p-4">
                     <div className='bg-foreground h-10 w-20 rounded-md hover:-translate-y-1 transition-all duration-200 ease-in-out cursor-pointer'></div>
                     <div className='bg-red-500 h-10 w-20 rounded-md hover:-translate-y-1 transition-all duration-200 ease-in-out cursor-pointer'></div>
@@ -70,24 +94,30 @@ export default function DesktopNav() {
                 </div>
             </div>
 
-            <div className={`bg-nav-menu w-full ${showCategoriesMenu ? 'h-fit' : 'h-0'} absolute top-20 transition-all overflow-y-hidden duration-500 z-10`}>
-                <ul className="h-auto max-h-72 column-4 flex flex-col gap-8 py-14 px-44">
-                    <li><p>Sciences et Savoirs</p></li>
-                    <li><p>Société</p></li>
-                    <li><p>Environnement</p></li>
-                    <li><p>Arts et Divertissement</p></li>
-                    <li><p>Monde</p></li>
-                    <li><p>Politique</p></li>
-                    <li><p>Économie</p></li>
-                    <li><p>Cellule Inversigation</p></li>
-                    <li><p>Vie quotidienne</p></li>
-                    <li><p>Bien-être</p></li>
-                    <li><p>Enfants</p></li>
-                    <li><p>Sports</p></li>
-                    <li><p>Actualités musicales</p></li>
-                    <li><p>Musique</p></li>
-                    <li><p>Concerts</p></li>
-                    <li><p>Fictions</p></li>
+            <div
+                className={`bg-nav-menu w-full absolute top-20 transition-transform duration-300 overflow-y-hidden z-10 ${showCategoriesMenu ? 'scale-y-100' : 'scale-y-0'
+                    }`}
+                style={{ transformOrigin: 'top' }}
+            >
+                <ul
+                    className="columns-4 pt-10 pb-24 px-32 text-sm space-y-4"
+                >
+                    <li className="css-menu-item"><p className="css-menu-item-p">Sciences et Savoirs</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Société</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Environnement</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Arts et Divertissement</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Monde</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Politique</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Économie</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Cellule Investigation</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Vie quotidienne</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Bien-être</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Enfants</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Sports</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Actualités musicales</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Musique</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Concerts</p></li>
+                    <li className="css-menu-item"><p className="css-menu-item-p">Fictions</p></li>
                 </ul>
             </div>
         </>

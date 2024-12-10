@@ -16,7 +16,11 @@ export default function MobileNav() {
 
     return (
         <>
-            <nav className="bg-background h-14 fixed w-full flex flex-row justify-between py-5 px-6 items-center z-50">
+            <nav
+                className={`${isOpen ? 'bg-background' : 'bg-background/30'
+                    } transition-all duration-1000 h-14 fixed w-full flex flex-row justify-between py-5 px-6 items-center z-50`}
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+            >
                 <div
                     className="relative size-5 cursor-pointer flex flex-col items-center"
                     onClick={toggleMenu}>
