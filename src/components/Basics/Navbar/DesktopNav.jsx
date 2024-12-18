@@ -81,7 +81,7 @@ export default function DesktopNav() {
                 </div>
             </nav>
 
-            <div className={`bg-[#373737]/40 w-full h-fit ${showRadiosMenu ? 'scale-y-100' : 'scale-y-0'} overflow-y-hidden overflow-x-auto absolute top-20 z-10 transition-all duration-300 ease-in-out`} style={{ transformOrigin: 'top' }}>
+            <div className={`bg-[#373737]/40 w-full h-fit ${showRadiosMenu ? 'scale-y-100' : 'scale-y-0'} overflow-y-hidden overflow-x-auto absolute top-20 z-50 transition-all duration-300 ease-in-out`} style={{ transformOrigin: 'top' }}>
                 <div className="flex flex-row gap-6 items-center justify-center p-4">
                     <div className='bg-foreground h-10 w-20 rounded-md hover:-translate-y-1 transition-all duration-200 ease-in-out cursor-pointer'></div>
                     <div className='bg-red-500 h-10 w-20 rounded-md hover:-translate-y-1 transition-all duration-200 ease-in-out cursor-pointer'></div>
@@ -95,7 +95,7 @@ export default function DesktopNav() {
             </div>
 
             <div
-                className={`bg-nav-menu w-full absolute top-20 transition-transform duration-300 overflow-y-hidden z-10 ${showCategoriesMenu ? 'scale-y-100' : 'scale-y-0'
+                className={`bg-nav-menu w-full absolute top-20 transition-transform duration-300 overflow-y-hidden z-50 ${showCategoriesMenu ? 'scale-y-100' : 'scale-y-0'
                     }`}
                 style={{ transformOrigin: 'top' }}
             >

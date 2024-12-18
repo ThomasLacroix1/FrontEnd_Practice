@@ -1,37 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ variant, children, ...props }) => {
+const PlayIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5V19L19 12L8 5Z" />
+    </svg>
+);
+
+const SaveIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 21L12 14L5 21V3H19V21Z" />
+    </svg>
+);
+
+const Button = ({ variant = 'primary', size = 'sm', children, hiddenText, className, icon, ...props }) => {
     // Styles de base
     const baseStyles = '';
 
     // Variantes
+    const sizeStyles = {
+        sm: 'p-3 h-12 min-w-12 text-xs lg:text-sm uppercase',
+        lg: 'p-3 h-12 min-w-12 text-xs lg:p-6 lg:h-16 lg:min-w-16 lg:text-base uppercase',
+    };
+
     const variantStyles = {
-        primary: 'bg-foreground text-background hover:shadow-lg hover:shadow-foreground',
-        secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-        success: 'bg-green-500 text-white hover:bg-green-600',
-        danger: 'bg-red-500 text-white hover:bg-red-600',
+        primary: 'group flex flex-row items-center justify-center gap-2 w-fit bg-foreground text-background rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-gray-700 hover:-translate-y-1',
+        secondary: 'group flex flex-row items-center justify-center gap-2 w-fit bg-transparent rounded-full border border-foreground text-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-gray-700',
     };
 
     // Concaténation manuelle des classes
-    const buttonClass = `${baseStyles} ${variantStyles[variant] || variantStyles.primary}`;
+    const buttonClass = `${baseStyles} ${variantStyles[variant] || variantStyles.primary} ${sizeStyles[size] || sizeStyles.sm} ${className || ''}`;
 
     return (
         <button className={buttonClass} {...props}>
-            {children}
+            {icon === "play" && <PlayIcon />}
+            {icon === "save" && <SaveIcon />}
+            {children ?? children}
+            {hiddenText && (
+                <p className="hidden group-hover:block uppercase">
+                    {hiddenText}
+                </p>
+            )}
         </button>
     );
 };
 
 // Validation des props
 Button.propTypes = {
-    variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger']),
-    children: PropTypes.node.isRequired,
-};
-
-// Valeurs par défaut
-Button.defaultProps = {
-    variant: 'primary',
+    variant: PropTypes.oneOf(['primary', 'secondary']),
+    size: PropTypes.oneOf(['sm', 'lg']),
+    children: PropTypes.node,
+    hiddenText: PropTypes.string,
+    className: PropTypes.string,
+    icon: PropTypes.oneOf(["play", "save"]),
 };
 
 export default Button;
