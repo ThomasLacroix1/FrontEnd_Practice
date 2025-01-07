@@ -18,7 +18,7 @@ export default function MobileNav() {
         <>
             <nav
                 className={`${isOpen ? 'bg-background' : 'bg-background/30'
-                    } transition-all duration-1000 h-14 fixed w-full flex flex-row justify-between py-5 px-6 items-center z-50`}
+                    } transition-all duration-1000 h-14 sticky w-full flex flex-row justify-between py-5 px-6 items-center z-50`}
                 style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
             >
                 <div

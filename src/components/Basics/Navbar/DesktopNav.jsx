@@ -20,7 +20,7 @@ export default function DesktopNav() {
 
     return (
         <>
-            <nav className={` ${showCategoriesMenu ? 'bg-background' : 'bg-transparent'} fixed flex flex-row justify-between px-8 items-center h-20 w-full text-primary z-20 transition-all ease-in-out duration-500 delay-200`}>
+            <nav className={` ${showCategoriesMenu ? 'bg-background' : 'bg-transparent'} sticky flex flex-row justify-between px-8 items-center h-20 w-full text-primary z-20 transition-all ease-in-out duration-500 delay-200`}>
                 <div className="flex flex-row gap-8">
                     <a href="#" onClick={handleRadiosMenu} className="flex items-center gap-2">
                         Radios
