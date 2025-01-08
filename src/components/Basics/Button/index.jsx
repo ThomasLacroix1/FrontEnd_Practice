@@ -63,7 +63,7 @@ const Button = ({ variant = 'primary', size = 'sm', children, hiddenText, classN
 
 // Validation des props
 Button.propTypes = {
-    variant: PropTypes.oneOf(['primary', 'secondary', 'reverse']),
+    variant: PropTypes.oneOf(['primary', 'secondary', 'reverse', 'icon']),
     size: PropTypes.oneOf(['sm', 'lg']),
     children: PropTypes.node,
     hiddenText: PropTypes.string,

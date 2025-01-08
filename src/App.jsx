@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from '@/components/Basics/Navbar'
 import EnAvant from '@/components/EnAvant'
 import EnDirect from '@/components/EnDirect'
+import Footer from './components/Footer'
 
 export default function App() {
 
@@ -12,7 +13,7 @@ export default function App() {
         <EnAvant />
         <EnDirect />
       </div>
-
+      <Footer />
     </>
   )
 }

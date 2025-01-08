@@ -7,6 +7,21 @@ export default function EnDirect() {
     const [canScrollLeft, setCanScrollLeft] = React.useState(false);
     const [canScrollRight, setCanScrollRight] = React.useState(false);
     const containerRef = React.useRef(null);
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth < 1024);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     const checkScroll = () => {
         const { current } = containerRef;
@@ -64,23 +79,21 @@ export default function EnDirect() {
                 {isScrollable && canScrollLeft && (
                     <div className="absolute left-0 top-0 h-full w-14 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
                 )}
-                {isScrollable && canScrollLeft && (
+                {((isScrollable && canScrollLeft) || isMobile) && (
                     <Button
-                        className='absolute left-8 top-1/2 transform -translate-y-1/2 z-50 opacity-0 group-hover:opacity-100 transition-opacity'
+                        className='absolute left-8 top-1/2 transform -translate-y-1/2 z-50 opacity-100 transition-opacity'
                         icon='left-arrow'
                         variant='icon'
                         onClick={scrollLeft}
-                    >
-                    </Button>
+                    />
                 )}
-                {isScrollable && canScrollRight && (
+                {((isScrollable && canScrollRight) || isMobile) && (
                     <Button
-                        className='absolute right-8 top-1/2 transform -translate-y-1/2 z-50 opacity-0 group-hover:opacity-100 transition-opacity'
+                        className='absolute right-8 top-1/2 transform -translate-y-1/2 z-50 opacity-100 transition-opacity'
                         icon='right-arrow'
                         variant='icon'
                         onClick={scrollRight}
-                    >
-                    </Button>
+                    />
                 )}
             </div>
         </div>
