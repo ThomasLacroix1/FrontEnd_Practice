@@ -159,13 +159,13 @@ export default function Footer() {
             <div className="flex gap-4">
               <a href="#">
                 <img
-                  src="google-play.svg"
+                  src="./google-play.svg"
                   alt="Google Play"
                   className="h-8 lg:h-10"
                 />
               </a>
               <a href="#">
-                <img src="app-store.svg" alt="App Store" className="h-8 lg:h-10" />
+                <img src="./app-store.svg" alt="App Store" className="h-8 lg:h-10" />
               </a>
             </div>
         </div>

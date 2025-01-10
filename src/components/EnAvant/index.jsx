@@ -17,7 +17,7 @@ export default function EnAvant() {
       style={{ paddingTop: navHeight }}
     >
       <img
-        src="/en-avant.png"
+        src="./en-avant.png"
         alt="Image mise en avant"
         className="w-full h-full object-cover top-0 absolute -z-10 filter lg:filter-none"
         style={{ filter: "opacity(55%)" }}
