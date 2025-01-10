@@ -79,7 +79,7 @@ export default function EnDirect() {
                 {isScrollable && canScrollLeft && (
                     <div className="absolute left-0 top-0 h-full w-14 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
                 )}
-                {((isScrollable && canScrollLeft) || isMobile) && (
+                {((isScrollable && canScrollLeft) && !isMobile) && (
                     <Button
                         className='absolute left-8 top-1/2 transform -translate-y-1/2 z-50 opacity-100 transition-opacity'
                         icon='left-arrow'
@@ -87,7 +87,7 @@ export default function EnDirect() {
                         onClick={scrollLeft}
                     />
                 )}
-                {((isScrollable && canScrollRight) || isMobile) && (
+                {((isScrollable && canScrollRight) && !isMobile) && (
                     <Button
                         className='absolute right-8 top-1/2 transform -translate-y-1/2 z-50 opacity-100 transition-opacity'
                         icon='right-arrow'

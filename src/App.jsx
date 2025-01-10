@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col gap-16'>
+      <div className='flex flex-col gap-10'>
         <EnAvant />
         <EnDirect />
       </div>
